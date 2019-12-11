@@ -27,7 +27,7 @@
                 <v-list-item-title>Add to cart</v-list-item-title>
             </v-list-item-content>
         </v-list-item>
-        <v-subheader>Selected Ingredients</v-subheader>
+        <v-subheader>Select Each Ingredients' ratio</v-subheader>
         <IngredientSettings
             v-for="ingredient in ingredients"
             :key="ingredient.id"

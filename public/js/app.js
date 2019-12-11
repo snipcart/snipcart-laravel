@@ -2157,6 +2157,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4042,7 +4067,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.max-width {\n    max-width: 1024px;\n    margin: auto;\n}\n", ""]);
+exports.push([module.i, "\n.max-width {\n    max-width: 1024px;\n    margin: auto;\n}\n.v-list--three-line .v-list-item {\n    min-height: 60px !important;\n}\n.circle {\n    border-radius: 100%;\n}\n", ""]);
 
 // exports
 
@@ -6451,7 +6476,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("v-subheader", [_vm._v("Selected Ingredients")]),
+          _c("v-subheader", [_vm._v("Select Each Ingredients' ratio")]),
           _vm._v(" "),
           _vm._l(_vm.ingredients, function(ingredient) {
             return _c("IngredientSettings", {
@@ -6513,10 +6538,74 @@ var render = function() {
                   attrs: { align: "center", justify: "center" }
                 },
                 [
+                  _c("v-col", { attrs: { align: "center" } }, [
+                    _c("p", [
+                      _vm._v(
+                        "You've unexpectedly come to care for a little being?"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "You've pulled all nighters for the Jedi Academy's exams?"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "Having a nutritious breakfeast shoul'd feel like retrieving a Kyber crystal from Ilum's caves."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "Use our oatmeal recipe builder to get a finely balanced diet for you or your youngling!"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n                        Feeling satiated already? Read\n                        "
+                      ),
+                      _c("a", { attrs: { href: "/#" } }, [
+                        _vm._v("our blog post and tutorial")
+                      ]),
+                      _vm._v(" or \n                        "),
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "https://github.com/snipcart/snipcart-laravel"
+                          }
+                        },
+                        [_vm._v("check out the repo")]
+                      ),
+                      _vm._v("!\n                    ")
+                    ])
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-row",
+                {
+                  staticClass: "max-width",
+                  attrs: { align: "center", justify: "center" }
+                },
+                [
                   _c(
                     "v-col",
                     { attrs: { cols: "12", sm: "6", md: "5" } },
                     [
+                      !_vm.selected.length
+                        ? _c("p", { attrs: { align: "center" } }, [
+                            _vm._v(
+                              "\n                        Select some ingredients to start building your own oatmeal recipe.\n                    "
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
                       _vm.selected.length
                         ? _c("SelectedIngredients", {
                             attrs: { ingredients: _vm.selected },
@@ -6542,6 +6631,20 @@ var render = function() {
                   )
                 ],
                 1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-row",
+                {
+                  staticClass: "max-width",
+                  attrs: { align: "center", justify: "center" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/img/baby.gif", alt: "Hungry being" }
+                  })
+                ]
               )
             ],
             1
