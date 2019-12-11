@@ -9,4 +9,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/ingredients', 'IngredientController@index');
 
 Route::post('/recipes', 'RecipeController@save');
+Route::get('/recipe/{id}', 'RecipeController@fetch');
 Route::post('/recipes/preview', 'RecipeController@preview');

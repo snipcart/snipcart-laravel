@@ -26,8 +26,13 @@ class RecipeController extends Controller
 
         IngredientRecipe::insert($items);
 
-        $ingredients = Recipe::find($recipe->id)
-            ->ingredients->map(function($ingredient) {
+        return $this->fetch($recipe->id);
+    }
+
+    public function fetch($id) {
+        $recipe = Recipe::find($id);
+        $ingredients = $recipe->ingredients
+            ->map(function($ingredient) {
                 $ingredient->quantity = $ingredient->pivot->quantity;
                 return $ingredient;
             });
