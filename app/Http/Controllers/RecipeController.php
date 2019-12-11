@@ -12,8 +12,8 @@ class RecipeController extends Controller
     public function save(Request $request)
     {
         $recipe = new Recipe;
-        $recipe->name = $request->input('name');
-        $recipe->size = $request->input('size');
+        $this->setField($recipe, 'name', $request, 'Unnamed');
+        $this->setField($recipe, 'size', $request, 'small');
         $recipe->save();
 
         $items = array_map(function($item) use($recipe) {
@@ -42,7 +42,7 @@ class RecipeController extends Controller
         return response()
             ->json([
                 'id' => $recipe->id,
-                'name' => 'Recipe '.$recipe->name.' ('.$recipe->size.')',
+                'name' => 'Recipe: '.$recipe->name.' ('.$recipe->size.')',
                 'url' => '/api/recipe/'.$recipe->id,
                 'price' => $price,
             ]);
@@ -76,6 +76,15 @@ class RecipeController extends Controller
             ->json([
                 'price' => $this->calculatePrice($ingredients, $size),
             ]);
+    }
+
+    private function setField($recipe, $key, $request, $default) {
+        $value = $request->input($key);
+        if(!empty($value)) {
+            $recipe->{$key} = $value;
+        } else {
+            $recipe->{$key} = $default;
+        }
     }
 
     private function calculatePrice($items, $size) {
