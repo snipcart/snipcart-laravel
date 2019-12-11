@@ -134,7 +134,7 @@ export default {
 </script>
 <style>
 .max-width {
-    max-width: 1024px;
+    max-width: 1024px !important;
     margin: auto;
 }
 
