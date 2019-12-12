@@ -15,3 +15,5 @@ Tutorial steps:
 > Read the full tutorial [here](https://snipcart.com/blog/laravel-ecommerce-website-tutorial)
 
 > View the live demo [here](https://snipcart-laravel.herokuapp.com/#/)
+
+Enjoy, folks!
