@@ -10,6 +10,6 @@ class IngredientController extends Controller
 {
     public function index()
     {
-        return response(Ingredient::all()->jsonSerialize(), Response::HTTP_OK);
+        return response()->json(Ingredient::all()->jsonSerialize());
     }
 }

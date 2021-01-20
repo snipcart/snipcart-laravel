@@ -36,7 +36,7 @@ class RecipeController extends Controller
                 $ingredient->quantity = $ingredient->pivot->quantity;
                 return $ingredient;
             });
-        
+
         $price = $this->calculatePrice($ingredients, $recipe->size);
 
         return response()
