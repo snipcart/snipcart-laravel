@@ -24,3 +24,5 @@ Route::get('/ingredients', [IngredientController::class,'index']);
 Route::get('/recipe/{id}', [RecipeController::class, 'fetch']);
 
 Route::post('/recipes', [RecipeController::class, 'save']);
+Route::post('/recipes/preview', [RecipeController::class, 'preview']);
+
