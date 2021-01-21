@@ -1,9 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Ingredient;
-use App\IngredientRecipe;
-use App\Recipe;
+use App\Models\Ingredient;
+use App\Models\IngredientRecipe;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
