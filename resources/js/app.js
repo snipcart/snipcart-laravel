@@ -7,8 +7,8 @@ import vuetify from './vuetify'
 Vue.use(AsyncComputed);
 
 Vue.config.devtools = true;
-const app = new Vue({
+new Vue({
     render: (h) => h(App),
     el: '#app',
-    vuetify,
-});
+    vuetify: vuetify,
+}).$mount('#app');

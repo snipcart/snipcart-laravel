@@ -16,7 +16,7 @@ class IngredientsTableSeeder extends Seeder
             [
                 'name' => 'Quick Oats',
                 'description' => '100% whole grain oats (quick cooking)',
-                'category' => 'oats',
+                'category' => 'oatssdfg',
                 'price_per_gram' => 0.007,
             ],
             [

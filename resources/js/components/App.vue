@@ -1,27 +1,29 @@
 <template>
-    <v-app>
+    <v-app class="test">
         <v-content>
             <v-container
                 class="fill-height"
                 fluid
             >
-                <v-row class="max-width"
+            <v-row class="max-width py-6"
                     align="center"
                     justify="center"
                 >
-                    <v-col align="center">
-                        <p>You've unexpectedly come to care for a little being?</p>
-                        <p>You've pulled all nighters for the Jedi Academy's exams?</p>
-                        <p>Having a nutritious breakfeast shoul'd feel like retrieving a Kyber crystal from Ilum's caves.</p>
-                        <p>Use our oatmeal recipe builder to get a finely balanced diet for you or your youngling!</p>
-                        <p>
-                            Feeling satiated already? Read
-                            <a href="/#">our blog post and tutorial</a> or 
-                            <a href="https://github.com/snipcart/snipcart-laravel">check out the repo</a>!
-                        </p>
-                    </v-col>
+                    <h1> This little being is hungry </h1>
                 </v-row>
-                <v-row class="max-width"
+            <v-row class="max-width py-6"
+                    align="center"
+                    justify="center"
+                >
+                    <img class="circle" src="/img/baby.gif" alt="Hungry being" />
+                </v-row>
+            <v-row class="max-width py-6"
+                    align="center"
+                    justify="center"
+                >
+                    <h1> Make him a recipe </h1>
+                </v-row>
+            <v-row class="max-width"
                     align="center"
                     justify="center"
                 >
@@ -53,7 +55,29 @@
                     align="center"
                     justify="center"
                 >
-                    <img class="circle" src="/img/baby.gif" alt="Hungry being" />
+                    <v-col
+                        cols="12"
+                        sm="6"
+                        md="5"
+                    >
+                        <p v-if="!selected.length" align="center">
+                            Select some ingredients to start building your own oatmeal recipe.
+                        </p>
+                        <SelectedIngredients
+                            v-if="selected.length"
+                            :ingredients="selected"
+                            @removed="remove" />
+                    </v-col>
+                    <v-col
+                        cols="12"
+                        sm="6"
+                        md="5"
+                    >
+                        <AvailableIngredients
+                            v-if="available.length"
+                            @selected="select"
+                            :ingredients="available" />
+                    </v-col>
                 </v-row>
             </v-container>
         </v-content>
@@ -133,15 +157,9 @@ export default {
 };
 </script>
 <style>
-.max-width {
-    max-width: 1024px !important;
-    margin: auto;
+.test {
+    font-family: 'Dosis', sans-serif;
 }
-
-.v-list--three-line .v-list-item {
-    min-height: 60px !important;
-}
-
 .circle {
     border-radius: 100%;
 }
