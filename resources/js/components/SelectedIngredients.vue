@@ -4,6 +4,7 @@
     max-width="300"
     tile
   >
+  <!-- TODO remove removed logic -->
     <v-list three-line>
         <v-subheader>Your Recipe: {{price}}$</v-subheader>
         <v-list-item>

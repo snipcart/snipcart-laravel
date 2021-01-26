@@ -1876,8 +1876,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      selectedIngredients: []
+    };
+  },
   props: {
     ingredients: Array
   },
@@ -1901,8 +1905,22 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     select: function select(id) {
-      console.warn("Selecting ".concat(id, " from availables"));
+      console.warn("Selecting ".concat(id));
       this.$emit('selected', id);
+    },
+    unselect: function unselect(id) {
+      console.warn("Unselecting ".concat(id));
+      this.$emit('removed', id);
+    },
+    toggle: function toggle(id) {
+      //TODO refactor if condition loop in separate method
+      if (this.selectedIngredients.find(function (i) {
+        return i === id;
+      })) {
+        this.unselect(id);
+      } else {
+        this.select(id);
+      }
     }
   }
 });
@@ -1969,6 +1987,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -6230,9 +6249,7 @@ var render = function() {
         "v-list",
         { staticClass: "max-width", attrs: { "two-line": "" } },
         [
-          _c("v-subheader", { attrs: { inset: _vm.inset } }, [
-            _vm._v("Select your ingredients")
-          ]),
+          _c("v-subheader", [_vm._v("Select your ingredients")]),
           _vm._v(" "),
           _c("v-divider"),
           _vm._v(" "),
@@ -6269,15 +6286,7 @@ var render = function() {
                 ) {
                   return _c(
                     "v-list-item",
-                    {
-                      key: ingredient.id,
-                      staticClass: "max-width",
-                      on: {
-                        click: function($event) {
-                          return _vm.select(ingredient.id)
-                        }
-                      }
-                    },
+                    { key: ingredient.id, staticClass: "max-width" },
                     [
                       _c(
                         "v-list-item-content",
@@ -6288,7 +6297,20 @@ var render = function() {
                               _c("v-checkbox", {
                                 attrs: {
                                   color: "primary",
-                                  label: ingredient.name
+                                  label: ingredient.name,
+                                  value: ingredient.id
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.toggle(ingredient.id)
+                                  }
+                                },
+                                model: {
+                                  value: _vm.selectedIngredients,
+                                  callback: function($$v) {
+                                    _vm.selectedIngredients = $$v
+                                  },
+                                  expression: "selectedIngredients"
                                 }
                               })
                             ],
