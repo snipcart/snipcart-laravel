@@ -1,6 +1,6 @@
 <template>
     <v-app class="app">
-        <v-content>
+        <v-main>
             <v-container
                 class="fill-height"
                 fluid
@@ -37,7 +37,7 @@
                     :ingredients="available" />
                 </v-row>
             </v-container>
-        </v-content>
+        </v-main>
     </v-app>
 </template>
 <script>

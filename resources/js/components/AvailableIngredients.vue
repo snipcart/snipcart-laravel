@@ -13,7 +13,7 @@
         >
           <v-list-item-content>
             <v-list-item-action>
-                <v-checkbox color="primary" @click="toggle(ingredient.id)" :label="ingredient.name" :value="ingredient.id" v-model="selectedIngredients"></v-checkbox>
+                <v-checkbox color="primary" @change="toggle(ingredient.id)" :label="ingredient.name" :value="ingredient.id" v-model="selectedIngredients"></v-checkbox>
             </v-list-item-action>
             <v-list-item-subtitle v-if="ingredient.description">
                 {{ingredient.description}}
@@ -69,10 +69,11 @@ export default {
         toggle(id) {
             //TODO refactor if condition loop in separate method
             if (this.selectedIngredients.find(i => i === id)) {
-                this.unselect(id);
-            } else {
                 this.select(id);
+            } else {
+                this.unselect(id);
             }
+            console.log(this.selectedIngredients);
         }
     }
 }
