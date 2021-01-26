@@ -15,12 +15,6 @@
             @removed="$emit('removed', $event)">
         </IngredientSettings>
         <v-list-item>
-            <v-text-field
-                label="Name"
-                v-model="name">
-            </v-text-field>
-        </v-list-item>
-        <v-list-item>
             <v-select
                 :items="['small', 'medium', 'large']"
                 label="Size"
@@ -34,6 +28,9 @@
             <v-list-item-content>
                 <v-list-item-title>Add to cart</v-list-item-title>
             </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+            {{this.recipeName}}
         </v-list-item>
         <v-subheader>Select Each Ingredients' ratio</v-subheader>
     </v-list>
@@ -51,11 +48,11 @@ export default {
     data() {
         return {
             size: 'small',
-            name: '',
         };
     },
     props: {
         ingredients: Array,
+        recipeName: String,
     },
     asyncComputed: {
         async price() {

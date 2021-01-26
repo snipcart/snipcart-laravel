@@ -21,6 +21,14 @@
           </v-list-item-content>
         </v-list-item>
       </v-list-group>
+      <v-list-item>
+          <!-- TODO: validate we want a keyup event here and not something else -->
+            <v-text-field
+                label="Name"
+                @keyup="setRecipeName"
+                v-model="recipeName">
+            </v-text-field>
+        </v-list-item>
     </v-list>
     </v-col>
 </template>
@@ -28,6 +36,7 @@
 export default {
     data (){
         return {
+        recipeName: '',
         selectedIngredients: [],
         }
     },
@@ -58,6 +67,10 @@ export default {
         }
     },
     methods: {
+        setRecipeName() {
+            console.warn(`Setting recipe name to ${this.recipeName}`);
+            this.$emit('named', this.recipeName);
+        },
         select(id) {
             console.warn(`Selecting ${id}`);
             this.$emit('selected', id);

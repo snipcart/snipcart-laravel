@@ -1876,9 +1876,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      recipeName: '',
       selectedIngredients: []
     };
   },
@@ -1904,6 +1913,10 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    setRecipeName: function setRecipeName() {
+      console.warn("Setting recipe name to ".concat(this.recipeName));
+      this.$emit('named', this.recipeName);
+    },
     select: function select(id) {
       console.warn("Selecting ".concat(id));
       this.$emit('selected', id);
@@ -2018,9 +2031,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2029,12 +2039,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
-      size: 'small',
-      name: ''
+      size: 'small'
     };
   },
   props: {
-    ingredients: Array
+    ingredients: Array,
+    recipeName: String
   },
   asyncComputed: {
     price: function price() {
@@ -2172,6 +2182,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 
@@ -2183,7 +2195,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
-      allIngredients: []
+      allIngredients: [],
+      recipeName: ''
     };
   },
   created: function created() {
@@ -2236,6 +2249,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           quantity: 5
         });
       });
+    },
+    setRecipeName: function setRecipeName(name) {
+      this.recipeName = name;
     },
     remove: function remove(id) {
       var items = this.allIngredients;
@@ -6329,7 +6345,25 @@ var render = function() {
               ],
               2
             )
-          })
+          }),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            [
+              _c("v-text-field", {
+                attrs: { label: "Name" },
+                on: { keyup: _vm.setRecipeName },
+                model: {
+                  value: _vm.recipeName,
+                  callback: function($$v) {
+                    _vm.recipeName = $$v
+                  },
+                  expression: "recipeName"
+                }
+              })
+            ],
+            1
+          )
         ],
         2
       )
@@ -6421,23 +6455,6 @@ var render = function() {
           _c(
             "v-list-item",
             [
-              _c("v-text-field", {
-                attrs: { label: "Name" },
-                model: {
-                  value: _vm.name,
-                  callback: function($$v) {
-                    _vm.name = $$v
-                  },
-                  expression: "name"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-list-item",
-            [
               _c("v-select", {
                 attrs: { items: ["small", "medium", "large"], label: "Size" },
                 model: {
@@ -6470,6 +6487,10 @@ var render = function() {
             ],
             1
           ),
+          _vm._v(" "),
+          _c("v-list-item", [
+            _vm._v("\n          " + _vm._s(this.recipeName) + "\n      ")
+          ]),
           _vm._v(" "),
           _c("v-subheader", [_vm._v("Select Each Ingredients' ratio")])
         ],
@@ -6553,7 +6574,10 @@ var render = function() {
                 [
                   _vm.selected.length
                     ? _c("SelectedIngredients", {
-                        attrs: { ingredients: _vm.selected },
+                        attrs: {
+                          ingredients: _vm.selected,
+                          recipeName: _vm.recipeName
+                        },
                         on: { removed: _vm.remove }
                       })
                     : _vm._e(),
@@ -6561,7 +6585,7 @@ var render = function() {
                   _vm.available.length
                     ? _c("AvailableIngredients", {
                         attrs: { ingredients: _vm.available },
-                        on: { selected: _vm.select }
+                        on: { named: _vm.setRecipeName, selected: _vm.select }
                       })
                     : _vm._e()
                 ],
@@ -62321,6 +62345,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VDivider */ "./node_modules/vuetify/lib/components/VDivider/index.js");
 /* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/index.js");
 /* harmony import */ var vuetify_lib_components_VSubheader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VSubheader */ "./node_modules/vuetify/lib/components/VSubheader/index.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
 
 
 
@@ -62352,7 +62377,8 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VCheckbox: vuetify_lib_components_VCheckbox__WEBPACK_IMPORTED_MODULE_4__["VCheckbox"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VCol"],VDivider: vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_6__["VDivider"],VList: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VList"],VListGroup: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListGroup"],VListItem: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListItem"],VListItemAction: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListItemAction"],VListItemContent: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListItemContent"],VListItemSubtitle: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListItemSubtitle"],VListItemTitle: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListItemTitle"],VSubheader: vuetify_lib_components_VSubheader__WEBPACK_IMPORTED_MODULE_8__["VSubheader"]})
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VCheckbox: vuetify_lib_components_VCheckbox__WEBPACK_IMPORTED_MODULE_4__["VCheckbox"],VCol: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VCol"],VDivider: vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_6__["VDivider"],VList: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VList"],VListGroup: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListGroup"],VListItem: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListItem"],VListItemAction: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListItemAction"],VListItemContent: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListItemContent"],VListItemSubtitle: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListItemSubtitle"],VListItemTitle: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_7__["VListItemTitle"],VSubheader: vuetify_lib_components_VSubheader__WEBPACK_IMPORTED_MODULE_8__["VSubheader"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_9__["VTextField"]})
 
 
 /* hot reload */
@@ -62493,7 +62519,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/index.js");
 /* harmony import */ var vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VSelect */ "./node_modules/vuetify/lib/components/VSelect/index.js");
 /* harmony import */ var vuetify_lib_components_VSubheader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VSubheader */ "./node_modules/vuetify/lib/components/VSubheader/index.js");
-/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
 
 
 
@@ -62523,8 +62548,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VCard: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_4__["VCard"],VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_5__["VIcon"],VList: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__["VList"],VListItem: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__["VListItem"],VListItemAction: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__["VListItemAction"],VListItemContent: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__["VListItemContent"],VListItemTitle: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__["VListItemTitle"],VSelect: vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_7__["VSelect"],VSubheader: vuetify_lib_components_VSubheader__WEBPACK_IMPORTED_MODULE_8__["VSubheader"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_9__["VTextField"]})
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VCard: vuetify_lib_components_VCard__WEBPACK_IMPORTED_MODULE_4__["VCard"],VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_5__["VIcon"],VList: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__["VList"],VListItem: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__["VListItem"],VListItemAction: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__["VListItemAction"],VListItemContent: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__["VListItemContent"],VListItemTitle: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_6__["VListItemTitle"],VSelect: vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_7__["VSelect"],VSubheader: vuetify_lib_components_VSubheader__WEBPACK_IMPORTED_MODULE_8__["VSubheader"]})
 
 
 /* hot reload */

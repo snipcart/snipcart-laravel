@@ -30,9 +30,11 @@
                 <SelectedIngredients
                     v-if="selected.length"
                     :ingredients="selected"
+                    :recipeName="recipeName"
                     @removed="remove" />
                 <AvailableIngredients
                     v-if="available.length"
+                    @named="setRecipeName"
                     @selected="select"
                     :ingredients="available" />
                 </v-row>
@@ -56,6 +58,7 @@ export default {
     data() {
         return {
             allIngredients: [],
+            recipeName: ''
         };
     },
     async created() {
@@ -95,6 +98,10 @@ export default {
                     quantity: 5,
                 }));
         },
+        setRecipeName(name){
+            this.recipeName = name;
+        }
+        ,
         remove(id) {
             const items = this.allIngredients;
             mutateItem(items,
