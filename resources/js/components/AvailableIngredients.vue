@@ -86,7 +86,6 @@ export default {
             } else {
                 this.unselect(id);
             }
-            console.log(this.selectedIngredients);
         }
     }
 }

@@ -95,7 +95,7 @@ class IngredientsTableSeeder extends Seeder
                 'price_per_gram' => 0.03,
             ],
             [
-                'name' => 'Mapple Sirup',
+                'name' => 'Maple Sirup',
                 'description' => null,
                 'category' => 'sweeteners',
                 'price_per_gram' => 0.03,

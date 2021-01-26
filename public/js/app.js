@@ -1934,8 +1934,6 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.unselect(id);
       }
-
-      console.log(this.selectedIngredients);
     }
   }
 });
@@ -2184,6 +2182,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2196,7 +2210,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       allIngredients: [],
-      recipeName: ''
+      e3: 1,
+      recipeName: ""
     };
   },
   created: function created() {
@@ -2206,7 +2221,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return _babel_runtime_regenerator_index_js__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/ingredients'));
+            return _babel_runtime_regenerator_index_js__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/ingredients"));
 
           case 2:
             response = _context.sent;
@@ -4092,7 +4107,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.app {\n    font-family: 'Dosis', sans-serif;\n}\n.circle {\n    border-radius: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.app {\n  font-family: \"Dosis\", sans-serif;\n}\n.circle {\n  border-radius: 100%;\n}\n", ""]);
 
 // exports
 
@@ -6539,7 +6554,7 @@ var render = function() {
                   staticClass: "max-width py-6",
                   attrs: { align: "center", justify: "center" }
                 },
-                [_c("h1", [_vm._v(" This little being is hungry ")])]
+                [_c("h1", [_vm._v("This little being is hungry")])]
               ),
               _vm._v(" "),
               _c(
@@ -6562,7 +6577,7 @@ var render = function() {
                   staticClass: "max-width py-6",
                   attrs: { align: "center", justify: "center" }
                 },
-                [_c("h1", [_vm._v(" Make him a recipe ")])]
+                [_c("h1", [_vm._v("Make him a recipe")])]
               ),
               _vm._v(" "),
               _c(
@@ -6572,22 +6587,141 @@ var render = function() {
                   attrs: { align: "center", justify: "center" }
                 },
                 [
-                  _vm.selected.length
-                    ? _c("SelectedIngredients", {
-                        attrs: {
-                          ingredients: _vm.selected,
-                          recipeName: _vm.recipeName
+                  _c(
+                    "v-stepper",
+                    {
+                      model: {
+                        value: _vm.e3,
+                        callback: function($$v) {
+                          _vm.e3 = $$v
                         },
-                        on: { removed: _vm.remove }
-                      })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.available.length
-                    ? _c("AvailableIngredients", {
-                        attrs: { ingredients: _vm.available },
-                        on: { named: _vm.setRecipeName, selected: _vm.select }
-                      })
-                    : _vm._e()
+                        expression: "e3"
+                      }
+                    },
+                    [
+                      _c(
+                        "v-stepper-header",
+                        [
+                          _c(
+                            "v-stepper-step",
+                            { attrs: { complete: _vm.e3 > 1, step: "1" } },
+                            [
+                              _vm._v(
+                                "\n              Select your ingredients\n            "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider"),
+                          _vm._v(" "),
+                          _c(
+                            "v-stepper-step",
+                            { attrs: { complete: _vm.e3 > 2, step: "2" } },
+                            [
+                              _vm._v(
+                                "\n              Name your recipe\n            "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-divider"),
+                          _vm._v(" "),
+                          _c(
+                            "v-stepper-step",
+                            { attrs: { complete: _vm.e3 > 3, step: "3" } },
+                            [
+                              _vm._v(
+                                "\n              Add it to your cart\n            "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-stepper-items",
+                        [
+                          _c(
+                            "v-stepper-content",
+                            { attrs: { step: "1" } },
+                            [
+                              _vm.available.length
+                                ? _c("AvailableIngredients", {
+                                    attrs: { ingredients: _vm.available },
+                                    on: {
+                                      named: _vm.setRecipeName,
+                                      selected: _vm.select
+                                    }
+                                  })
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: { color: "primary" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.e3 = 2
+                                    }
+                                  }
+                                },
+                                [_vm._v(" Continue ")]
+                              ),
+                              _vm._v(" "),
+                              _c("v-btn", { attrs: { text: "" } }, [
+                                _vm._v(" Cancel ")
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-stepper-content",
+                            { attrs: { step: "2" } },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: { color: "primary" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.e3 = 3
+                                    }
+                                  }
+                                },
+                                [_vm._v(" Continue ")]
+                              ),
+                              _vm._v(" "),
+                              _c("v-btn", { attrs: { text: "" } }, [
+                                _vm._v(" Cancel ")
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-stepper-content",
+                            { attrs: { step: "3" } },
+                            [
+                              _vm.selected.length
+                                ? _c("SelectedIngredients", {
+                                    attrs: {
+                                      ingredients: _vm.selected,
+                                      recipeName: _vm.recipeName
+                                    },
+                                    on: { removed: _vm.remove }
+                                  })
+                                : _vm._e()
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
                 ],
                 1
               )
@@ -62606,8 +62740,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../node_modules/vuetify-loader/lib/runtime/installComponents.js */ "./node_modules/vuetify-loader/lib/runtime/installComponents.js");
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var vuetify_lib_components_VApp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VApp */ "./node_modules/vuetify/lib/components/VApp/index.js");
-/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
-/* harmony import */ var vuetify_lib_components_VMain__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VMain */ "./node_modules/vuetify/lib/components/VMain/index.js");
+/* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/index.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
+/* harmony import */ var vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VDivider */ "./node_modules/vuetify/lib/components/VDivider/index.js");
+/* harmony import */ var vuetify_lib_components_VMain__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuetify/lib/components/VMain */ "./node_modules/vuetify/lib/components/VMain/index.js");
+/* harmony import */ var vuetify_lib_components_VStepper__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuetify/lib/components/VStepper */ "./node_modules/vuetify/lib/components/VStepper/index.js");
 
 
 
@@ -62633,7 +62770,14 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4___default()(component, {VApp: vuetify_lib_components_VApp__WEBPACK_IMPORTED_MODULE_5__["VApp"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_6__["VContainer"],VMain: vuetify_lib_components_VMain__WEBPACK_IMPORTED_MODULE_7__["VMain"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_6__["VRow"]})
+
+
+
+
+
+
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4___default()(component, {VApp: vuetify_lib_components_VApp__WEBPACK_IMPORTED_MODULE_5__["VApp"],VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_6__["VBtn"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VContainer"],VDivider: vuetify_lib_components_VDivider__WEBPACK_IMPORTED_MODULE_8__["VDivider"],VMain: vuetify_lib_components_VMain__WEBPACK_IMPORTED_MODULE_9__["VMain"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_7__["VRow"],VStepper: vuetify_lib_components_VStepper__WEBPACK_IMPORTED_MODULE_10__["VStepper"],VStepperContent: vuetify_lib_components_VStepper__WEBPACK_IMPORTED_MODULE_10__["VStepperContent"],VStepperHeader: vuetify_lib_components_VStepper__WEBPACK_IMPORTED_MODULE_10__["VStepperHeader"],VStepperItems: vuetify_lib_components_VStepper__WEBPACK_IMPORTED_MODULE_10__["VStepperItems"],VStepperStep: vuetify_lib_components_VStepper__WEBPACK_IMPORTED_MODULE_10__["VStepperStep"]})
 
 
 /* hot reload */
