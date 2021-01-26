@@ -1,5 +1,6 @@
 <template>
   <v-app class="app">
+    <v-app-bar flat dense><v-btn icon class="snipcart-checkout"><v-icon>mdi-cart</v-icon></v-btn></v-app-bar>
     <v-main>
       <v-container class="fill-height" fluid>
         <v-row class="max-width py-6" align="center" justify="center">
