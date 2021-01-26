@@ -1945,15 +1945,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     ingredient: Object
@@ -6373,49 +6364,7 @@ var render = function() {
     [
       _c(
         "v-list-item-content",
-        [
-          _c("v-list-item-title", [_vm._v(_vm._s(_vm.ingredient.name))]),
-          _vm._v(" "),
-          _vm.ingredient.description
-            ? _c(
-                "v-list-item-subtitle",
-                [
-                  _c("v-slider", {
-                    attrs: { min: 0, max: 10, step: 0.01 },
-                    on: {
-                      change: function($event) {
-                        return _vm.$emit("quantity", {
-                          id: _vm.ingredient.id,
-                          qnt: $event
-                        })
-                      }
-                    },
-                    model: {
-                      value: _vm.quantity,
-                      callback: function($$v) {
-                        _vm.quantity = $$v
-                      },
-                      expression: "quantity"
-                    }
-                  })
-                ],
-                1
-              )
-            : _vm._e()
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-list-item-action",
-        {
-          on: {
-            click: function($event) {
-              return _vm.$emit("removed", _vm.ingredient.id)
-            }
-          }
-        },
-        [_c("v-icon", [_vm._v("mdi-minus-circle")])],
+        [_c("v-list-item-title", [_vm._v(_vm._s(_vm.ingredient.name))])],
         1
       )
     ],
@@ -6452,9 +6401,22 @@ var render = function() {
         "v-list",
         { attrs: { "three-line": "" } },
         [
-          _c("v-subheader", [
-            _vm._v("Your Recipe: " + _vm._s(_vm.price) + "$")
-          ]),
+          _c("v-subheader", [_vm._v("Your Recipe Summary")]),
+          _vm._v(" "),
+          _vm._l(_vm.ingredients, function(ingredient) {
+            return _c("IngredientSettings", {
+              key: ingredient.id,
+              attrs: { ingredient: ingredient },
+              on: {
+                quantity: function($event) {
+                  return _vm.$emit("quantity", $event)
+                },
+                removed: function($event) {
+                  return _vm.$emit("removed", $event)
+                }
+              }
+            })
+          }),
           _vm._v(" "),
           _c(
             "v-list-item",
@@ -6509,22 +6471,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("v-subheader", [_vm._v("Select Each Ingredients' ratio")]),
-          _vm._v(" "),
-          _vm._l(_vm.ingredients, function(ingredient) {
-            return _c("IngredientSettings", {
-              key: ingredient.id,
-              attrs: { ingredient: ingredient },
-              on: {
-                quantity: function($event) {
-                  return _vm.$emit("quantity", $event)
-                },
-                removed: function($event) {
-                  return _vm.$emit("removed", $event)
-                }
-              }
-            })
-          })
+          _c("v-subheader", [_vm._v("Select Each Ingredients' ratio")])
         ],
         2
       )
@@ -62461,9 +62408,7 @@ __webpack_require__.r(__webpack_exports__);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vuetify-loader/lib/runtime/installComponents.js */ "./node_modules/vuetify-loader/lib/runtime/installComponents.js");
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
-/* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/index.js");
-/* harmony import */ var vuetify_lib_components_VSlider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VSlider */ "./node_modules/vuetify/lib/components/VSlider/index.js");
+/* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/index.js");
 
 
 
@@ -62487,11 +62432,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-
-
-
-
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_4__["VIcon"],VListItem: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_5__["VListItem"],VListItemAction: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_5__["VListItemAction"],VListItemContent: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_5__["VListItemContent"],VListItemSubtitle: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_5__["VListItemSubtitle"],VListItemTitle: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_5__["VListItemTitle"],VSlider: vuetify_lib_components_VSlider__WEBPACK_IMPORTED_MODULE_6__["VSlider"]})
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VListItem: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__["VListItem"],VListItemContent: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__["VListItemContent"],VListItemTitle: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__["VListItemTitle"]})
 
 
 /* hot reload */

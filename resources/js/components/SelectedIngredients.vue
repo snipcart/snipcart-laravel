@@ -6,7 +6,14 @@
   >
   <!-- TODO remove removed logic -->
     <v-list three-line>
-        <v-subheader>Your Recipe: {{price}}$</v-subheader>
+        <v-subheader>Your Recipe Summary</v-subheader>
+        <IngredientSettings
+            v-for="ingredient in ingredients"
+            :key="ingredient.id"
+            :ingredient="ingredient"
+            @quantity="$emit('quantity', $event)"
+            @removed="$emit('removed', $event)">
+        </IngredientSettings>
         <v-list-item>
             <v-text-field
                 label="Name"
@@ -29,13 +36,6 @@
             </v-list-item-content>
         </v-list-item>
         <v-subheader>Select Each Ingredients' ratio</v-subheader>
-        <IngredientSettings
-            v-for="ingredient in ingredients"
-            :key="ingredient.id"
-            :ingredient="ingredient"
-            @quantity="$emit('quantity', $event)"
-            @removed="$emit('removed', $event)">
-        </IngredientSettings>
     </v-list>
   </v-card>
 </template>
