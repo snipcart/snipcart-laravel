@@ -1,5 +1,5 @@
 <template>
-    <v-app class="test">
+    <v-app class="app">
         <v-content>
             <v-container
                 class="fill-height"
@@ -27,57 +27,14 @@
                     align="center"
                     justify="center"
                 >
-                    <v-col
-                        cols="12"
-                        sm="6"
-                        md="5"
-                    >
-                        <p v-if="!selected.length" align="center">
-                            Select some ingredients to start building your own oatmeal recipe.
-                        </p>
-                        <SelectedIngredients
-                            v-if="selected.length"
-                            :ingredients="selected"
-                            @removed="remove" />
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        sm="6"
-                        md="5"
-                    >
-                        <AvailableIngredients
-                            v-if="available.length"
-                            @selected="select"
-                            :ingredients="available" />
-                    </v-col>
-                </v-row>
-                <v-row class="max-width"
-                    align="center"
-                    justify="center"
-                >
-                    <v-col
-                        cols="12"
-                        sm="6"
-                        md="5"
-                    >
-                        <p v-if="!selected.length" align="center">
-                            Select some ingredients to start building your own oatmeal recipe.
-                        </p>
-                        <SelectedIngredients
-                            v-if="selected.length"
-                            :ingredients="selected"
-                            @removed="remove" />
-                    </v-col>
-                    <v-col
-                        cols="12"
-                        sm="6"
-                        md="5"
-                    >
-                        <AvailableIngredients
-                            v-if="available.length"
-                            @selected="select"
-                            :ingredients="available" />
-                    </v-col>
+                <SelectedIngredients
+                    v-if="selected.length"
+                    :ingredients="selected"
+                    @removed="remove" />
+                <AvailableIngredients
+                    v-if="available.length"
+                    @selected="select"
+                    :ingredients="available" />
                 </v-row>
             </v-container>
         </v-content>
@@ -157,7 +114,7 @@ export default {
 };
 </script>
 <style>
-.test {
+.app {
     font-family: 'Dosis', sans-serif;
 }
 .circle {
