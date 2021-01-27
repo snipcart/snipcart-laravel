@@ -1,9 +1,6 @@
 <template>
-    <v-col class="max-width" cols="12" sm="4" md="4">
     <v-list class="max-width" two-line>
         <!-- TODO make multi columns lists -->
-      <v-subheader>Select your ingredients</v-subheader>
-      <v-divider></v-divider>
       <v-list-group v-for="category in categories" :key="category" color="primary">
         <template v-slot:activator>
             <v-list-item-title class="font-weight-medium">{{category}}</v-list-item-title>
@@ -21,16 +18,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list-group>
-      <v-list-item>
-          <!-- TODO: validate we want a keyup event here and not something else -->
-            <v-text-field
-                label="Name"
-                @keyup="setRecipeName"
-                v-model="recipeName">
-            </v-text-field>
-        </v-list-item>
     </v-list>
-    </v-col>
 </template>
 <script>
 export default {
@@ -67,10 +55,6 @@ export default {
         }
     },
     methods: {
-        setRecipeName() {
-            console.warn(`Setting recipe name to ${this.recipeName}`);
-            this.$emit('named', this.recipeName);
-        },
         select(id) {
             console.warn(`Selecting ${id}`);
             this.$emit('selected', id);

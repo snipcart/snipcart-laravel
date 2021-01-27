@@ -30,8 +30,6 @@
             <v-stepper-items>
             <v-stepper-content step="1">
                 <AvailableIngredients
-                v-if="available.length"
-                @named="setRecipeName"
                 @selected="select"
                 :ingredients="available"
               />
@@ -39,14 +37,13 @@
               <v-btn text> Cancel </v-btn>
             </v-stepper-content>
             <v-stepper-content step="2">
+                <RecipeCustomiser  @named="setRecipeName" />
               <v-btn color="primary" @click="e3 = 3"> Continue </v-btn>
-
               <v-btn text> Cancel </v-btn>
             </v-stepper-content>
             <!-- TODO Remove @removed -->
             <v-stepper-content step="3">
                 <SelectedIngredients
-                v-if="selected.length"
                 :ingredients="selected"
                 :recipeName="recipeName"
                 @removed="remove"
@@ -63,6 +60,7 @@
 import axios from "axios";
 
 import AvailableIngredients from "./AvailableIngredients";
+import RecipeCustomiser from "./RecipeCustomiser";
 import SelectedIngredients from "./SelectedIngredients";
 
 import { mutateItem } from "../utils";
@@ -70,6 +68,7 @@ import { mutateItem } from "../utils";
 export default {
   components: {
     AvailableIngredients,
+    RecipeCustomiser,
     SelectedIngredients,
   },
   data() {
