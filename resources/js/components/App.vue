@@ -1,55 +1,63 @@
 <template>
-  <v-app class="app">
-    <v-app-bar flat dense><v-btn icon class="snipcart-checkout"><v-icon>mdi-cart</v-icon></v-btn></v-app-bar>
+  <v-app class="apps">
+    <v-app-bar app flat dense fixed clipped-right>
+      <v-spacer></v-spacer>
+      <v-btn icon class="snipcart-customer-signin"
+        ><v-icon color="primary">mdi-account</v-icon></v-btn
+      >
+      <v-btn icon class="snipcart-checkout"
+        ><v-icon color="primary">mdi-cart</v-icon></v-btn
+      ></v-app-bar
+    >
     <v-main>
-      <v-container class="fill-height" fluid>
-        <v-row class="max-width py-6" align="center" justify="center">
+      <v-container fluid class="d-flex flex-column justify-center align-center">
+        <v-row align="center" justify="center">
           <h1>This little being is hungry</h1>
         </v-row>
-        <v-row class="max-width py-6" align="center" justify="center">
+        <v-row align="center" justify="center">
           <img class="circle" src="/img/baby.gif" alt="Hungry being" />
         </v-row>
-        <v-row class="max-width py-6" align="center" justify="center">
-          <h1>Make him a recipe</h1>
+        <v-row class="my-8" align="center" justify="center">
+          <v-btn
+            block
+            color="primary"
+            @click="$vuetify.goTo('#test')"
+            class="font-weight-bold"
+            depressed
+            shaped
+            x-large
+            >Make him a recipe</v-btn
+          >
         </v-row>
-        <v-row class="max-width" align="center" justify="center">
-          <v-stepper v-model="e3">
+        <v-row id="test" justify="center" class="max-width">
+          <v-stepper class="elevation-0 stepper" v-model="e2" flat vertical>
             <v-stepper-header>
-              <v-stepper-step :complete="e3 > 1" step="1">
+              <v-stepper-step :complete="e2 > 1" step="1">
                 Select your ingredients
               </v-stepper-step>
               <v-divider></v-divider>
-              <v-stepper-step :complete="e3 > 2" step="2">
-                Name your recipe
-              </v-stepper-step>
-              <v-divider></v-divider>
-              <v-stepper-step :complete="e3 > 3" step="3">
-                Add it to your cart
+              <v-stepper-step :complete="e2 > 2" step="2">
+                Complete final details
               </v-stepper-step>
             </v-stepper-header>
-            <v-stepper-items>
             <v-stepper-content step="1">
-                <AvailableIngredients
+              <AvailableIngredients
                 @selected="select"
                 :ingredients="available"
               />
-              <v-btn color="primary" @click="e3 = 2"> Continue </v-btn>
-              <v-btn text> Cancel </v-btn>
+              <v-btn color="primary" @click="e2 = 2"> Continue </v-btn>
             </v-stepper-content>
             <v-stepper-content step="2">
-                <RecipeCustomiser  @named="setRecipeName" />
-              <v-btn color="primary" @click="e3 = 3"> Continue </v-btn>
-              <v-btn text> Cancel </v-btn>
-            </v-stepper-content>
-            <!-- TODO Remove @removed -->
-            <v-stepper-content step="3">
-                <SelectedIngredients
+              <SelectedIngredients
                 :ingredients="selected"
                 :recipeName="recipeName"
                 @removed="remove"
               />
+              <v-btn color="primary" @click="e2 = 1" text>
+                Change ingredients
+              </v-btn>
             </v-stepper-content>
-            </v-stepper-items>
+            <v-stepper-items> </v-stepper-items>
           </v-stepper>
         </v-row>
       </v-container>
@@ -74,7 +82,7 @@ export default {
   data() {
     return {
       allIngredients: [],
-      e3: 1,
+      e2: 1,
       recipeName: "",
     };
   },
@@ -99,6 +107,7 @@ export default {
     },
   },
   methods: {
+    // TODO change mutateItem method so that selected ingredients are not removed from allIngredients
     select(id) {
       const items = this.allIngredients;
       mutateItem(
@@ -134,12 +143,24 @@ export default {
     },
   },
 };
+// TODO fix naming bug
 </script>
 <style>
-.app {
+.apps {
   font-family: "Dosis", sans-serif;
 }
+
 .circle {
   border-radius: 100%;
+}
+
+.stepper {
+  width: 70%;
+}
+
+@media (max-width: 630px) {
+  .stepper {
+    width: 100%;
+  }
 }
 </style>

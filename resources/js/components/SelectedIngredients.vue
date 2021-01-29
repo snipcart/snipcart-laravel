@@ -1,25 +1,18 @@
 <template>
-  <v-card class="mx-auto" max-width="300" tile>
+  <v-card class="max-width" tile>
     <!-- TODO remove removed logic -->
     <v-list three-line>
-      <v-subheader>Your Recipe Summary</v-subheader>
-      <v-list-item-title> Your recipe name </v-list-item-title>
       <v-list-item>
-        {{ this.recipeName }}
+        <v-text-field
+          label="Name your recipe"
+          v-model="recipeName"
+        >
+        </v-text-field>
       </v-list-item>
-      <v-list-item-title> Your recipe ingredients </v-list-item-title>
-      <IngredientSettings
-        v-for="ingredient in ingredients"
-        :key="ingredient.id"
-        :ingredient="ingredient"
-        @quantity="$emit('quantity', $event)"
-        @removed="$emit('removed', $event)"
-      >
-      </IngredientSettings>
       <v-list-item>
         <v-select
           :items="['small', 'medium', 'large']"
-          label="Size"
+          label="Select your size"
           v-model="size"
         >
         </v-select>
@@ -40,18 +33,19 @@ import axios from "axios";
 
 import IngredientSettings from "./IngredientSettings";
 
+// TODO clear state
 export default {
   components: {
     IngredientSettings,
   },
   data() {
     return {
+      recipeName: "",
       size: "small",
     };
   },
   props: {
     ingredients: Array,
-    recipeName: String,
   },
   asyncComputed: {
     async price() {
@@ -69,7 +63,7 @@ export default {
   methods: {
     async buy() {
       const payload = {
-        name: this.name,
+        name: this.recipeName,
         size: this.size,
         items: this.ingredients.map((x) => ({
           id: x.id,
@@ -80,6 +74,7 @@ export default {
       const host = window.location.protocol + "//" + window.location.host;
       Snipcart.api.cart.items.add({
         ...response.data,
+        // reset state
         url: host + response.data.url,
       });
     },

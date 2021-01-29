@@ -9,8 +9,8 @@ const opts = {
     theme: {
         themes: {
             dark: {
-                primary: colors.deepPurple,
-                secondary: colors.grey.darken1,
+                primary: colors.pink,
+                secondary: colors.white,
                 accent: colors.shades.black,
                 error: colors.red.accent3,
             },
