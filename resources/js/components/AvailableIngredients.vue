@@ -7,9 +7,9 @@
       color="primary"
       fluid
     >
-      <v-row class="mb-1"><h3 class="secondary--text">{{ category }}</h3></v-row>
+      <v-row class="mb-1"><h3 class="primary--text">{{ category }}</h3></v-row>
       <v-row class="mb-4"><v-divider></v-divider></v-row>
-      <v-row class="grid fill-height" no-gutters>
+      <v-row class="custom-grid" no-gutters>
         <v-col
           justify="space-around"
           v-for="ingredient in ingredientsByCategory[category]"
@@ -29,11 +29,11 @@
   </v-container>
 </template>
 <style scoped>
-.grid {
+.custom-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 184px);
   grid-gap: 1% 1%;
-  margin: auto;
+  margin: 0 0 0 2%;
   align-items: center;
   justify-items: flex-start;
   width: 100%;

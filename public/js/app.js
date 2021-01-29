@@ -4155,7 +4155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.grid[data-v-7369aab8] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, 184px);\n  grid-gap: 1% 1%;\n  margin: auto;\n  -webkit-box-align: center;\n          align-items: center;\n  justify-items: flex-start;\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.custom-grid[data-v-7369aab8] {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, 184px);\n  grid-gap: 1% 1%;\n  margin: 0 0 0 2%;\n  -webkit-box-align: center;\n          align-items: center;\n  justify-items: flex-start;\n  width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -4174,7 +4174,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.apps {\n  font-family: \"Dosis\", sans-serif;\n}\n.circle {\n  border-radius: 100%;\n}\n.stepper {\n  width: 70%;\n}\n@media (max-width: 630px) {\n.stepper {\n    width: 100%;\n}\n}\n", ""]);
+exports.push([module.i, "\n.apps {\n  font-family: \"Dosis\", sans-serif;\n}\n.circle {\n  border-radius: 100%;\n}\n.stepper {\n  width: 56%;\n}\n@media (max-width: 630px) {\n.stepper {\n    width: 88%;\n}\n}\n", ""]);
 
 // exports
 
@@ -6371,7 +6371,7 @@ var render = function() {
         { key: category, attrs: { color: "primary", fluid: "" } },
         [
           _c("v-row", { staticClass: "mb-1" }, [
-            _c("h3", { staticClass: "secondary--text" }, [
+            _c("h3", { staticClass: "primary--text" }, [
               _vm._v(_vm._s(category))
             ])
           ]),
@@ -6380,7 +6380,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-row",
-            { staticClass: "grid fill-height", attrs: { "no-gutters": "" } },
+            { staticClass: "custom-grid", attrs: { "no-gutters": "" } },
             _vm._l(_vm.ingredientsByCategory[category], function(ingredient) {
               return _c(
                 "v-col",

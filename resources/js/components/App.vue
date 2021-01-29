@@ -155,12 +155,12 @@ export default {
 }
 
 .stepper {
-  width: 70%;
+  width: 56%;
 }
 
 @media (max-width: 630px) {
   .stepper {
-    width: 100%;
+    width: 88%;
   }
 }
 </style>

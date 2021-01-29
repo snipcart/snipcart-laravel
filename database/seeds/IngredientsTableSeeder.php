@@ -16,7 +16,7 @@ class IngredientsTableSeeder extends Seeder
             [
                 'name' => 'Quick Oats',
                 'description' => '100% whole grain oats (quick cooking)',
-                'category' => 'oatssdfg',
+                'category' => 'oats',
                 'price_per_gram' => 0.007,
             ],
             [
@@ -64,12 +64,6 @@ class IngredientsTableSeeder extends Seeder
                 'price_per_gram' => 0.007,
             ],
             [
-                'name' => 'Almond Milk',
-                'description' => 'Milked from captive and tortured almonds',
-                'category' => 'milk products',
-                'price_per_gram' => 0.01,
-            ],
-            [
                 'name' => 'Green Milk',
                 'description' => 'The only true way to live like Luke Skywalker',
                 'category' => 'milk products',
@@ -112,12 +106,6 @@ class IngredientsTableSeeder extends Seeder
                 'category' => 'sweeteners',
                 'price_per_gram' => 0.02,
             ],
-            [
-                'name' => 'Cacao',
-                'description' => null,
-                'category' => 'sweeteners',
-                'price_per_gram' => 0.02,
-            ],
             // Proteins
             [
                 'name' => 'Protein Powder',
@@ -153,6 +141,12 @@ class IngredientsTableSeeder extends Seeder
             [
                 'name' => 'Berries',
                 'description' => 'A mix of small fruits goodness',
+                'category' => 'fruits',
+                'price_per_gram' => 0.03,
+            ],
+            [
+                'name' => 'Tomatoes',
+                'description' => 'Keeping up the debate',
                 'category' => 'fruits',
                 'price_per_gram' => 0.03,
             ]
