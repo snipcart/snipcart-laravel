@@ -2060,6 +2060,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
  // TODO clear state
 
@@ -6556,6 +6559,16 @@ var render = function() {
         ],
         1
       ),
+      _vm._v(" "),
+      _c("v-row", [
+        _c("div", [
+          _vm._v(" Price preview: "),
+          _c("span", { staticClass: "font-weight-black" }, [
+            _vm._v(" $" + _vm._s(_vm.price) + " ")
+          ]),
+          _vm._v(". What a deal for that little guy!")
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "v-row",

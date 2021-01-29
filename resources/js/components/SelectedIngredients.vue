@@ -17,6 +17,9 @@
         </v-select>
       </v-row>
       <v-row>
+          <div> Price preview: <span class="font-weight-black"> ${{ price }} </span>. What a deal for that little guy!</div>
+          </v-row>
+      <v-row>
         <v-btn color="primary" @click="buy">
             <v-icon>mdi-cart-plus</v-icon> Add to cart
         </v-btn>
