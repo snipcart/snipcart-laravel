@@ -1,32 +1,27 @@
 <template>
-  <v-card class="max-width" tile>
     <!-- TODO remove removed logic -->
-    <v-list three-line>
-      <v-list-item>
+    <v-container>
+      <v-row>
         <v-text-field
           label="Name your recipe"
           v-model="recipeName"
         >
         </v-text-field>
-      </v-list-item>
-      <v-list-item>
+      </v-row>
+      <v-row>
         <v-select
           :items="['small', 'medium', 'large']"
           label="Select your size"
           v-model="size"
         >
         </v-select>
-      </v-list-item>
-      <v-list-item @click="buy">
-        <v-list-item-action>
-          <v-icon>mdi-cart-plus</v-icon>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>Add to cart</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </v-card>
+      </v-row>
+      <v-row>
+        <v-btn color="primary" @click="buy">
+            <v-icon>mdi-cart-plus</v-icon> Add to cart
+        </v-btn>
+      </v-row>
+    </v-container>
 </template>
 <script>
 import axios from "axios";

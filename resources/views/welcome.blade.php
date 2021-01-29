@@ -9,6 +9,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="/img/Logo.svg"/>
         <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.28/default/snipcart.css" />
 
         <link rel="stylesheet" type="text/css" href="/css/app.css" />
