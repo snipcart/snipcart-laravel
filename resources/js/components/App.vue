@@ -11,13 +11,13 @@
     >
     <v-main>
       <v-container fluid class="d-flex flex-column justify-center align-center">
-        <v-row align="center" justify="center">
+        <v-row class="mt-16 mb-8" align="center" justify="center">
           <h1>This little being is hungry</h1>
         </v-row>
-        <v-row align="center" justify="center">
+        <v-row class="my-8" align="center" justify="center">
           <img class="circle" src="/img/baby.gif" alt="Hungry being" />
         </v-row>
-        <v-row class="my-8" align="center" justify="center">
+        <v-row class="mt-8 mb-16" align="center" justify="center">
           <v-btn
             block
             color="primary"
@@ -28,6 +28,9 @@
             x-large
             >Make him a recipe</v-btn
           >
+        </v-row>
+        <v-row>
+            <v-spacer class="my-16 py-16"></v-spacer>
         </v-row>
         <v-row id="test" justify="center" class="max-width">
           <v-stepper class="elevation-0 stepper" v-model="e2" flat vertical>

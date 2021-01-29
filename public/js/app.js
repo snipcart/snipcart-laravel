@@ -2207,6 +2207,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 
@@ -6654,21 +6657,33 @@ var render = function() {
               attrs: { fluid: "" }
             },
             [
-              _c("v-row", { attrs: { align: "center", justify: "center" } }, [
-                _c("h1", [_vm._v("This little being is hungry")])
-              ]),
-              _vm._v(" "),
-              _c("v-row", { attrs: { align: "center", justify: "center" } }, [
-                _c("img", {
-                  staticClass: "circle",
-                  attrs: { src: "/img/baby.gif", alt: "Hungry being" }
-                })
-              ]),
+              _c(
+                "v-row",
+                {
+                  staticClass: "mt-16 mb-8",
+                  attrs: { align: "center", justify: "center" }
+                },
+                [_c("h1", [_vm._v("This little being is hungry")])]
+              ),
               _vm._v(" "),
               _c(
                 "v-row",
                 {
                   staticClass: "my-8",
+                  attrs: { align: "center", justify: "center" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/img/baby.gif", alt: "Hungry being" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-row",
+                {
+                  staticClass: "mt-8 mb-16",
                   attrs: { align: "center", justify: "center" }
                 },
                 [
@@ -6694,6 +6709,8 @@ var render = function() {
                 ],
                 1
               ),
+              _vm._v(" "),
+              _c("v-row", [_c("v-spacer", { staticClass: "my-16 py-16" })], 1),
               _vm._v(" "),
               _c(
                 "v-row",
