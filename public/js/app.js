@@ -6369,7 +6369,7 @@ var render = function() {
         { key: category, attrs: { color: "primary", fluid: "" } },
         [
           _c("v-row", { staticClass: "mb-1" }, [
-            _c("h3", { staticClass: "primary--text" }, [
+            _c("h3", { staticClass: "font-weight-bold" }, [
               _vm._v(_vm._s(category))
             ])
           ]),
@@ -6759,7 +6759,7 @@ var render = function() {
                         { attrs: { step: "1" } },
                         [
                           _c("AvailableIngredients", {
-                            attrs: { ingredients: _vm.available },
+                            attrs: { ingredients: _vm.allIngredients },
                             on: { selected: _vm.select }
                           }),
                           _vm._v(" "),

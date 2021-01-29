@@ -43,7 +43,7 @@
             <v-stepper-content step="1">
               <AvailableIngredients
                 @selected="select"
-                :ingredients="available"
+                :ingredients="allIngredients"
               />
               <v-btn color="primary" @click="e2 = 2"> Continue </v-btn>
             </v-stepper-content>

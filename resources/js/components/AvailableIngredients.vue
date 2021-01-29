@@ -7,7 +7,7 @@
       color="primary"
       fluid
     >
-      <v-row class="mb-1"><h3 class="primary--text">{{ category }}</h3></v-row>
+      <v-row class="mb-1"><h3 class="font-weight-bold">{{ category }}</h3></v-row>
       <v-row class="mb-4"><v-divider></v-divider></v-row>
       <v-row class="custom-grid" no-gutters>
         <v-col
