@@ -1,9 +1,10 @@
 <template>
     <!-- TODO remove removed logic -->
-    <v-container>
+    <v-container fluid fill-height>
       <v-row>
         <v-text-field
           label="Name your recipe"
+          @keyup="named"
           v-model="recipeName"
         >
         </v-text-field>
@@ -12,18 +13,14 @@
         <v-select
           :items="['small', 'medium', 'large']"
           label="Select your size"
+          @change="sized"
           v-model="size"
         >
         </v-select>
       </v-row>
-      <v-row>
+      <v-row class="my-4">
           <div> Price preview: <span class="font-weight-black"> ${{ price }} </span>. What a deal for that little guy!</div>
           </v-row>
-      <v-row>
-        <v-btn color="primary" @click="buy">
-            <v-icon>mdi-cart-plus</v-icon> Add to cart
-        </v-btn>
-      </v-row>
     </v-container>
 </template>
 <script>
@@ -59,23 +56,12 @@ export default {
     },
   },
   methods: {
-    async buy() {
-      const payload = {
-        name: this.recipeName,
-        size: this.size,
-        items: this.ingredients.map((x) => ({
-          id: x.id,
-          quantity: x.quantity,
-        })),
-      };
-      const response = await axios.post("/api/recipes", payload);
-      const host = window.location.protocol + "//" + window.location.host;
-      Snipcart.api.cart.items.add({
-        ...response.data,
-        // reset state
-        url: host + response.data.url,
-      });
+    named() {
+        this.$emit("named", this.recipeName);
     },
+    sized() {
+        this.$emit("sized", this.size);
+    }
   },
 };
 </script>

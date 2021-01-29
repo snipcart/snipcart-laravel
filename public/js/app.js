@@ -2028,16 +2028,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _IngredientSettings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./IngredientSettings */ "./resources/js/components/IngredientSettings.vue");
 
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
 //
 //
 //
@@ -2111,39 +2101,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   methods: {
-    buy: function buy() {
-      var payload, response, host;
-      return _babel_runtime_regenerator_index_js__WEBPACK_IMPORTED_MODULE_0___default.a.async(function buy$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              payload = {
-                name: this.recipeName,
-                size: this.size,
-                items: this.ingredients.map(function (x) {
-                  return {
-                    id: x.id,
-                    quantity: x.quantity
-                  };
-                })
-              };
-              _context2.next = 3;
-              return _babel_runtime_regenerator_index_js__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/recipes", payload));
-
-            case 3:
-              response = _context2.sent;
-              host = window.location.protocol + "//" + window.location.host;
-              Snipcart.api.cart.items.add(_objectSpread({}, response.data, {
-                // reset state
-                url: host + response.data.url
-              }));
-
-            case 6:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, null, this);
+    named: function named() {
+      this.$emit("named", this.recipeName);
+    },
+    sized: function sized() {
+      this.$emit("sized", this.size);
     }
   }
 });
@@ -2241,6 +2203,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -2256,7 +2222,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       allIngredients: [],
       e2: 1,
-      recipeName: ""
+      recipeName: "",
+      size: "small"
     };
   },
   created: function created() {
@@ -2298,7 +2265,40 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   methods: {
-    // TODO change mutateItem method so that selected ingredients are not removed from allIngredients
+    buy: function buy() {
+      var payload, response, host;
+      return _babel_runtime_regenerator_index_js__WEBPACK_IMPORTED_MODULE_0___default.a.async(function buy$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              payload = {
+                name: this.recipeName,
+                size: this.size,
+                items: this.selected.map(function (x) {
+                  return {
+                    id: x.id,
+                    quantity: x.quantity
+                  };
+                })
+              };
+              _context2.next = 3;
+              return _babel_runtime_regenerator_index_js__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/recipes", payload));
+
+            case 3:
+              response = _context2.sent;
+              host = window.location.protocol + "//" + window.location.host;
+              Snipcart.api.cart.items.add(_objectSpread({}, response.data, {
+                // reset state
+                url: host + response.data.url
+              }));
+
+            case 6:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, null, this);
+    },
     select: function select(id) {
       var items = this.allIngredients;
       Object(_utils__WEBPACK_IMPORTED_MODULE_5__["mutateItem"])(items, function (x) {
@@ -2313,6 +2313,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     setRecipeName: function setRecipeName(name) {
       this.recipeName = name;
+    },
+    setSize: function setSize(size) {
+      this.size = size;
     },
     remove: function remove(id) {
       var items = this.allIngredients;
@@ -6522,12 +6525,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-container",
+    { attrs: { fluid: "", "fill-height": "" } },
     [
       _c(
         "v-row",
         [
           _c("v-text-field", {
             attrs: { label: "Name your recipe" },
+            on: { keyup: _vm.named },
             model: {
               value: _vm.recipeName,
               callback: function($$v) {
@@ -6548,6 +6553,7 @@ var render = function() {
               items: ["small", "medium", "large"],
               label: "Select your size"
             },
+            on: { change: _vm.sized },
             model: {
               value: _vm.size,
               callback: function($$v) {
@@ -6560,7 +6566,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("v-row", [
+      _c("v-row", { staticClass: "my-4" }, [
         _c("div", [
           _vm._v(" Price preview: "),
           _c("span", { staticClass: "font-weight-black" }, [
@@ -6568,23 +6574,7 @@ var render = function() {
           ]),
           _vm._v(". What a deal for that little guy!")
         ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        [
-          _c(
-            "v-btn",
-            { attrs: { color: "primary" }, on: { click: _vm.buy } },
-            [
-              _c("v-icon", [_vm._v("mdi-cart-plus")]),
-              _vm._v(" Add to cart\n    ")
-            ],
-            1
-          )
-        ],
-        1
-      )
+      ])
     ],
     1
   )
@@ -6784,11 +6774,12 @@ var render = function() {
                         { attrs: { step: "2" } },
                         [
                           _c("SelectedIngredients", {
-                            attrs: {
-                              ingredients: _vm.selected,
-                              recipeName: _vm.recipeName
-                            },
-                            on: { removed: _vm.remove }
+                            attrs: { ingredients: _vm.selected },
+                            on: {
+                              named: _vm.setRecipeName,
+                              sized: _vm.setSize,
+                              removed: _vm.remove
+                            }
                           }),
                           _vm._v(" "),
                           _c(
@@ -6806,6 +6797,19 @@ var render = function() {
                                 "\n              Change ingredients\n            "
                               )
                             ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: { click: _vm.buy }
+                            },
+                            [
+                              _c("v-icon", [_vm._v("mdi-cart-plus")]),
+                              _vm._v(" Add to cart\n            ")
+                            ],
+                            1
                           )
                         ],
                         1
@@ -62830,11 +62834,9 @@ __webpack_require__.r(__webpack_exports__);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vuetify-loader/lib/runtime/installComponents.js */ "./node_modules/vuetify-loader/lib/runtime/installComponents.js");
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VBtn */ "./node_modules/vuetify/lib/components/VBtn/index.js");
-/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
-/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
-/* harmony import */ var vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VSelect */ "./node_modules/vuetify/lib/components/VSelect/index.js");
-/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
+/* harmony import */ var vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VSelect */ "./node_modules/vuetify/lib/components/VSelect/index.js");
+/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
 
 
 
@@ -62859,9 +62861,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-
-
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VBtn: vuetify_lib_components_VBtn__WEBPACK_IMPORTED_MODULE_4__["VBtn"],VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VContainer"],VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_6__["VIcon"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VRow"],VSelect: vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_7__["VSelect"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_8__["VTextField"]})
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_4__["VContainer"],VRow: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_4__["VRow"],VSelect: vuetify_lib_components_VSelect__WEBPACK_IMPORTED_MODULE_5__["VSelect"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_6__["VTextField"]})
 
 
 /* hot reload */

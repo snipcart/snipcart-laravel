@@ -50,11 +50,15 @@
             <v-stepper-content step="2">
               <SelectedIngredients
                 :ingredients="selected"
-                :recipeName="recipeName"
+                @named="setRecipeName"
+                @sized="setSize"
                 @removed="remove"
               />
               <v-btn color="primary" @click="e2 = 1" text>
                 Change ingredients
+              </v-btn>
+              <v-btn color="primary" @click="buy">
+                <v-icon>mdi-cart-plus</v-icon> Add to cart
               </v-btn>
             </v-stepper-content>
             <v-stepper-items> </v-stepper-items>
@@ -84,6 +88,7 @@ export default {
       allIngredients: [],
       e2: 1,
       recipeName: "",
+      size: "small",
     };
   },
   async created() {
@@ -107,7 +112,23 @@ export default {
     },
   },
   methods: {
-    // TODO change mutateItem method so that selected ingredients are not removed from allIngredients
+    async buy() {
+      const payload = {
+        name: this.recipeName,
+        size: this.size,
+        items: this.selected.map((x) => ({
+          id: x.id,
+          quantity: x.quantity,
+        })),
+      };
+      const response = await axios.post("/api/recipes", payload);
+      const host = window.location.protocol + "//" + window.location.host;
+      Snipcart.api.cart.items.add({
+        ...response.data,
+        // reset state
+        url: host + response.data.url,
+      });
+    },
     select(id) {
       const items = this.allIngredients;
       mutateItem(
@@ -123,6 +144,9 @@ export default {
     },
     setRecipeName(name) {
       this.recipeName = name;
+    },
+    setSize(size) {
+      this.size = size;
     },
     remove(id) {
       const items = this.allIngredients;
