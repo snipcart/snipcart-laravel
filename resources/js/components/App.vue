@@ -170,7 +170,6 @@ export default {
     },
   },
 };
-// TODO fix naming bug
 </script>
 <style>
 .apps {

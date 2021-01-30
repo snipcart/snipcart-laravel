@@ -1890,7 +1890,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1920,6 +1919,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    ingredientIsSelected: function ingredientIsSelected(id) {
+      return this.selectedIngredients.find(function (i) {
+        return i === id;
+      });
+    },
     select: function select(id) {
       console.warn("Selecting ".concat(id));
       this.$emit("selected", id);
@@ -1930,9 +1934,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     toggle: function toggle(id) {
       //TODO refactor if condition loop in separate method
-      if (this.selectedIngredients.find(function (i) {
-        return i === id;
-      })) {
+      if (this.ingredientIsSelected) {
         this.select(id);
       } else {
         this.unselect(id);
@@ -2338,7 +2340,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   }
-}); // TODO fix naming bug
+});
 
 /***/ }),
 

@@ -1,6 +1,5 @@
 <template>
   <v-container fluid fill-height>
-    <!-- TODO make multi columns lists -->
     <v-container
       v-for="category in categories"
       :key="category"
@@ -70,6 +69,9 @@ export default {
     },
   },
   methods: {
+    ingredientIsSelected(id) {
+        return this.selectedIngredients.find((i) => i === id)
+    },
     select(id) {
       console.warn(`Selecting ${id}`);
       this.$emit("selected", id);
@@ -80,7 +82,7 @@ export default {
     },
     toggle(id) {
       //TODO refactor if condition loop in separate method
-      if (this.selectedIngredients.find((i) => i === id)) {
+      if (this.ingredientIsSelected) {
         this.select(id);
       } else {
         this.unselect(id);
