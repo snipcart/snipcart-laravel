@@ -1890,6 +1890,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1940,12 +1942,9 @@ __webpack_require__.r(__webpack_exports__);
         this.unselect(id);
       }
     } // main TODO s
-    // Fix CSS
-    // Fix bug
     // Refactor components
     // Implement pictures
     // Improve styling
-    // Integrate customer
 
   }
 });
@@ -2293,7 +2292,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               response = _context2.sent;
               host = window.location.protocol + "//" + window.location.host;
               Snipcart.api.cart.items.add(_objectSpread({}, response.data, {
-                // reset state
+                image: 'img/Logo.svg',
                 url: host + response.data.url
               }));
 

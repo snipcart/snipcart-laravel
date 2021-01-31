@@ -128,7 +128,7 @@ export default {
       const host = window.location.protocol + "//" + window.location.host;
       Snipcart.api.cart.items.add({
         ...response.data,
-        // reset state
+        image: 'img/Logo.svg',
         url: host + response.data.url,
       });
     },

@@ -6,7 +6,9 @@
       color="primary"
       fluid
     >
-      <v-row class="mb-1"><h3 class="font-weight-bold">{{ category }}</h3></v-row>
+      <v-row class="mb-1"
+        ><h3 class="font-weight-bold">{{ category }}</h3></v-row
+      >
       <v-row class="mb-4"><v-divider></v-divider></v-row>
       <v-row class="custom-grid" no-gutters>
         <v-col
@@ -70,7 +72,7 @@ export default {
   },
   methods: {
     ingredientIsSelected(id) {
-        return this.selectedIngredients.find((i) => i === id)
+      return this.selectedIngredients.find((i) => i === id);
     },
     select(id) {
       console.warn(`Selecting ${id}`);
@@ -90,12 +92,9 @@ export default {
     },
 
     // main TODO s
-    // Fix CSS
-    // Fix bug
     // Refactor components
     // Implement pictures
     // Improve styling
-    // Integrate customer
   },
 };
 </script>
