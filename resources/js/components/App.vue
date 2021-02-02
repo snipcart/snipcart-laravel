@@ -30,7 +30,7 @@
           >
         </v-row>
         <v-row>
-            <v-spacer class="my-16 py-16"></v-spacer>
+          <v-spacer class="my-16 py-16"></v-spacer>
         </v-row>
         <v-row id="test" justify="center" class="max-width">
           <v-stepper class="elevation-0 stepper" v-model="e2" flat vertical>
@@ -51,12 +51,23 @@
               <v-btn color="primary" @click="e2 = 2"> Continue </v-btn>
             </v-stepper-content>
             <v-stepper-content step="2">
-              <SelectedIngredients
-                :ingredients="selected"
-                @named="setRecipeName"
-                @sized="setSize"
-                @removed="remove"
-              />
+              <v-container fill-height fill-width fluid>
+                <v-row class="d-flex flex-column">
+                  <v-col lg align="center" justify="center">
+                    <v-lazy>
+                      <img class="product" src="img/Logo.svg" />
+                    </v-lazy>
+                  </v-col>
+                  <v-col>
+                    <SelectedIngredients
+                      :ingredients="selected"
+                      @named="setRecipeName"
+                      @sized="setSize"
+                      @removed="remove"
+                    />
+                  </v-col>
+                </v-row>
+              </v-container>
               <v-btn color="primary" @click="e2 = 1" text>
                 Change ingredients
               </v-btn>
@@ -128,7 +139,7 @@ export default {
       const host = window.location.protocol + "//" + window.location.host;
       Snipcart.api.cart.items.add({
         ...response.data,
-        image: 'img/Logo.svg',
+        image: "img/Logo.svg",
         url: host + response.data.url,
       });
     },
@@ -178,6 +189,11 @@ export default {
 
 .circle {
   border-radius: 100%;
+}
+
+.product {
+  height: auto;
+  width: 300px;
 }
 
 .stepper {
