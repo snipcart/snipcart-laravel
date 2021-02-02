@@ -59,7 +59,7 @@
                     </v-lazy>
                   </v-col>
                   <v-col>
-                    <SelectedIngredients
+                    <RecipeCustomizer
                       :ingredients="selected"
                       @named="setRecipeName"
                       @sized="setSize"
@@ -86,14 +86,14 @@
 import axios from "axios";
 
 import AvailableIngredients from "./AvailableIngredients";
-import SelectedIngredients from "./SelectedIngredients";
+import RecipeCustomizer from "./RecipeCustomizer";
 
 import { mutateItem } from "../utils";
 
 export default {
   components: {
     AvailableIngredients,
-    SelectedIngredients,
+    RecipeCustomizer,
   },
   data() {
     return {
