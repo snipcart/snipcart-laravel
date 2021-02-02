@@ -45,7 +45,7 @@ class IngredientsTableSeeder extends Seeder
                 'price_per_gram' => 0.02,
             ],
             [
-                'name' => 'Flax seeds',
+                'name' => 'Flax Seeds',
                 'description' => 'Excellent source of protein, fiber, iron, and calcium',
                 'category' => 'seeds',
                 'price_per_gram' => 0.01,

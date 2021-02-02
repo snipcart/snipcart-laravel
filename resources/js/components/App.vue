@@ -33,7 +33,7 @@
           <v-spacer class="my-16 py-16"></v-spacer>
         </v-row>
         <v-row id="test" justify="center" class="max-width">
-          <v-stepper class="elevation-0 stepper" v-model="e2" flat vertical>
+          <v-stepper class="elevation-0 stepper" v-model="e2" flat>
             <v-stepper-header>
               <v-stepper-step :complete="e2 > 1" step="1">
                 Select your ingredients
@@ -53,19 +53,12 @@
             <v-stepper-content step="2">
               <v-container fill-height fill-width fluid>
                 <v-row class="d-flex flex-column">
-                  <v-col lg align="center" justify="center">
-                    <v-lazy>
-                      <img class="product" src="img/Logo.svg" />
-                    </v-lazy>
-                  </v-col>
-                  <v-col>
                     <RecipeCustomizer
                       :ingredients="selected"
                       @named="setRecipeName"
                       @sized="setSize"
                       @removed="remove"
                     />
-                  </v-col>
                 </v-row>
               </v-container>
               <v-btn color="primary" @click="e2 = 1" text>
