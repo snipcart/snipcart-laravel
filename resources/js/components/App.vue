@@ -86,7 +86,6 @@
 import axios from "axios";
 
 import AvailableIngredients from "./AvailableIngredients";
-import RecipeCustomiser from "./RecipeCustomiser";
 import SelectedIngredients from "./SelectedIngredients";
 
 import { mutateItem } from "../utils";
@@ -94,7 +93,6 @@ import { mutateItem } from "../utils";
 export default {
   components: {
     AvailableIngredients,
-    RecipeCustomiser,
     SelectedIngredients,
   },
   data() {

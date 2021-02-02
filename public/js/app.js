@@ -1951,69 +1951,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vuetify-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IngredientSettings.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vuetify-loader/lib/loader.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/IngredientSettings.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    ingredient: Object
-  },
-  data: function data() {
-    return {
-      quantity: 5
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vuetify-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecipeCustomiser.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vuetify-loader/lib/loader.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecipeCustomiser.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      recipeName: ""
-    };
-  },
-  methods: {
-    setRecipeName: function setRecipeName() {
-      console.warn("Setting recipe name to ".concat(this.recipeName));
-      this.$emit("named", this.recipeName);
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vuetify-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SelectedIngredients.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vuetify-loader/lib/loader.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SelectedIngredients.vue?vue&type=script&lang=js& ***!
@@ -2027,7 +1964,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator_index_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator_index_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _IngredientSettings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./IngredientSettings */ "./resources/js/components/IngredientSettings.vue");
 
 //
 //
@@ -2054,13 +1990,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
  // TODO clear state
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    IngredientSettings: _IngredientSettings__WEBPACK_IMPORTED_MODULE_2__["default"]
-  },
   data: function data() {
     return {
       recipeName: "",
@@ -2127,9 +2059,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _AvailableIngredients__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AvailableIngredients */ "./resources/js/components/AvailableIngredients.vue");
-/* harmony import */ var _RecipeCustomiser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RecipeCustomiser */ "./resources/js/components/RecipeCustomiser.vue");
-/* harmony import */ var _SelectedIngredients__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SelectedIngredients */ "./resources/js/components/SelectedIngredients.vue");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils */ "./resources/js/utils.js");
+/* harmony import */ var _SelectedIngredients__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SelectedIngredients */ "./resources/js/components/SelectedIngredients.vue");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils */ "./resources/js/utils.js");
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -2226,12 +2157,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     AvailableIngredients: _AvailableIngredients__WEBPACK_IMPORTED_MODULE_2__["default"],
-    RecipeCustomiser: _RecipeCustomiser__WEBPACK_IMPORTED_MODULE_3__["default"],
-    SelectedIngredients: _SelectedIngredients__WEBPACK_IMPORTED_MODULE_4__["default"]
+    SelectedIngredients: _SelectedIngredients__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
@@ -2316,7 +2245,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     select: function select(id) {
       var items = this.allIngredients;
-      Object(_utils__WEBPACK_IMPORTED_MODULE_5__["mutateItem"])(items, function (x) {
+      Object(_utils__WEBPACK_IMPORTED_MODULE_4__["mutateItem"])(items, function (x) {
         return x.id === id;
       }, function (x) {
         return _objectSpread({}, x, {
@@ -2334,7 +2263,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     remove: function remove(id) {
       var items = this.allIngredients;
-      Object(_utils__WEBPACK_IMPORTED_MODULE_5__["mutateItem"])(items, function (x) {
+      Object(_utils__WEBPACK_IMPORTED_MODULE_4__["mutateItem"])(items, function (x) {
         return x.id === id;
       }, function (x) {
         return _objectSpread({}, x, {
@@ -6432,87 +6361,6 @@ var render = function() {
         1
       )
     }),
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vuetify-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IngredientSettings.vue?vue&type=template&id=404a70bf&":
-/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vuetify-loader/lib/loader.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/IngredientSettings.vue?vue&type=template&id=404a70bf& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-list-item",
-    [
-      _c(
-        "v-list-item-content",
-        [_c("v-list-item-title", [_vm._v(_vm._s(_vm.ingredient.name))])],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vuetify-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecipeCustomiser.vue?vue&type=template&id=1a833c3e&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vuetify-loader/lib/loader.js??ref--11-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RecipeCustomiser.vue?vue&type=template&id=1a833c3e& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-list",
-    { staticClass: "max-width", attrs: { "two-line": "" } },
-    [
-      _c(
-        "v-list-item",
-        [
-          _c("v-text-field", {
-            attrs: { label: "Name your recipe" },
-            on: { keyup: _vm.setRecipeName },
-            model: {
-              value: _vm.recipeName,
-              callback: function($$v) {
-                _vm.recipeName = $$v
-              },
-              expression: "recipeName"
-            }
-          })
-        ],
-        1
-      )
-    ],
     1
   )
 }
@@ -47764,7 +47612,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************************!*\
   !*** ./node_modules/vuetify/lib/components/index.js ***!
   \******************************************************/
-/*! exports provided: VApp, VAppBar, VAppBarNavIcon, VAppBarTitle, VBtn, VDivider, VContainer, VCol, VRow, VSpacer, VLayout, VFlex, VIcon, VLazy, VMain, VStepper, VStepperContent, VStepperStep, VStepperHeader, VStepperItems, VAlert, VAutocomplete, VAvatar, VBadge, VBanner, VBottomNavigation, VBottomSheet, VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, VBtnToggle, VCalendar, VCalendarCategory, VCalendarDaily, VCalendarWeekly, VCalendarMonthly, VCard, VCardActions, VCardSubtitle, VCardText, VCardTitle, VCarousel, VCarouselItem, VCheckbox, VSimpleCheckbox, VChip, VChipGroup, VColorPicker, VColorPickerSwatches, VColorPickerCanvas, VContent, VCombobox, VCounter, VData, VDataIterator, VDataFooter, VDataTable, VEditDialog, VTableOverflow, VDataTableHeader, VSimpleTable, VVirtualTable, VDatePicker, VDatePickerTitle, VDatePickerHeader, VDatePickerDateTable, VDatePickerMonthTable, VDatePickerYears, VDialog, VExpansionPanels, VExpansionPanel, VExpansionPanelHeader, VExpansionPanelContent, VFileInput, VFooter, VForm, VHover, VImg, VInput, VItem, VItemGroup, VLabel, VListItemActionText, VListItemContent, VListItemTitle, VListItemSubtitle, VList, VListGroup, VListItem, VListItemAction, VListItemAvatar, VListItemIcon, VListItemGroup, VMenu, VMessages, VNavigationDrawer, VOverflowBtn, VOverlay, VPagination, VSheet, VParallax, VPicker, VProgressCircular, VProgressLinear, VRadioGroup, VRadio, VRangeSlider, VRating, VResponsive, VSelect, VSkeletonLoader, VSlider, VSlideGroup, VSlideItem, VSnackbar, VSparkline, VSpeedDial, VSubheader, VSwitch, VSystemBar, VTabs, VTab, VTabItem, VTabsItems, VTabsSlider, VTextarea, VTextField, VThemeProvider, VTimeline, VTimelineItem, VTimePicker, VTimePickerClock, VTimePickerTitle, VToolbar, VToolbarItems, VToolbarTitle, VTooltip, VTreeview, VTreeviewNode, VVirtualScroll, VWindow, VWindowItem, VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VDialogTopTransition, VFadeTransition, VScaleTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition, VExpandTransition, VExpandXTransition */
+/*! exports provided: VApp, VAppBar, VAppBarNavIcon, VAppBarTitle, VAlert, VAutocomplete, VAvatar, VBadge, VBanner, VBottomNavigation, VBottomSheet, VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, VBtn, VBtnToggle, VCalendar, VCalendarCategory, VCalendarDaily, VCalendarWeekly, VCalendarMonthly, VCard, VCardActions, VCardSubtitle, VCardText, VCardTitle, VCarousel, VCarouselItem, VCheckbox, VSimpleCheckbox, VChip, VChipGroup, VColorPicker, VColorPickerSwatches, VColorPickerCanvas, VContent, VCombobox, VCounter, VData, VDataIterator, VDataFooter, VDataTable, VEditDialog, VTableOverflow, VDataTableHeader, VSimpleTable, VVirtualTable, VDatePicker, VDatePickerTitle, VDatePickerHeader, VDatePickerDateTable, VDatePickerMonthTable, VDatePickerYears, VDialog, VDivider, VExpansionPanels, VExpansionPanel, VExpansionPanelHeader, VExpansionPanelContent, VFileInput, VFooter, VForm, VContainer, VCol, VRow, VSpacer, VLayout, VFlex, VHover, VIcon, VImg, VInput, VItem, VItemGroup, VLabel, VLazy, VListItemActionText, VListItemContent, VListItemTitle, VListItemSubtitle, VList, VListGroup, VListItem, VListItemAction, VListItemAvatar, VListItemIcon, VListItemGroup, VMain, VMenu, VMessages, VNavigationDrawer, VOverflowBtn, VOverlay, VPagination, VSheet, VParallax, VPicker, VProgressCircular, VProgressLinear, VRadioGroup, VRadio, VRangeSlider, VRating, VResponsive, VSelect, VSkeletonLoader, VSlider, VSlideGroup, VSlideItem, VSnackbar, VSparkline, VSpeedDial, VStepper, VStepperContent, VStepperStep, VStepperHeader, VStepperItems, VSubheader, VSwitch, VSystemBar, VTabs, VTab, VTabItem, VTabsItems, VTabsSlider, VTextarea, VTextField, VThemeProvider, VTimeline, VTimelineItem, VTimePicker, VTimePickerClock, VTimePickerTitle, VToolbar, VToolbarItems, VToolbarTitle, VTooltip, VTreeview, VTreeviewNode, VVirtualScroll, VWindow, VWindowItem, VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VDialogTopTransition, VFadeTransition, VScaleTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition, VExpandTransition, VExpandXTransition */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49399,7 +49247,7 @@ Vuetify.config = {
 /*!*******************************************!*\
   !*** ./node_modules/vuetify/lib/index.js ***!
   \*******************************************/
-/*! exports provided: colors, default, VApp, VAppBar, VAppBarNavIcon, VAppBarTitle, VBtn, VDivider, VContainer, VCol, VRow, VSpacer, VLayout, VFlex, VIcon, VLazy, VMain, VStepper, VStepperContent, VStepperStep, VStepperHeader, VStepperItems, ClickOutside, Intersect, Mutate, Resize, Ripple, Scroll, Touch, VAlert, VAutocomplete, VAvatar, VBadge, VBanner, VBottomNavigation, VBottomSheet, VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, VBtnToggle, VCalendar, VCalendarCategory, VCalendarDaily, VCalendarWeekly, VCalendarMonthly, VCard, VCardActions, VCardSubtitle, VCardText, VCardTitle, VCarousel, VCarouselItem, VCheckbox, VSimpleCheckbox, VChip, VChipGroup, VColorPicker, VColorPickerSwatches, VColorPickerCanvas, VContent, VCombobox, VCounter, VData, VDataIterator, VDataFooter, VDataTable, VEditDialog, VTableOverflow, VDataTableHeader, VSimpleTable, VVirtualTable, VDatePicker, VDatePickerTitle, VDatePickerHeader, VDatePickerDateTable, VDatePickerMonthTable, VDatePickerYears, VDialog, VExpansionPanels, VExpansionPanel, VExpansionPanelHeader, VExpansionPanelContent, VFileInput, VFooter, VForm, VHover, VImg, VInput, VItem, VItemGroup, VLabel, VListItemActionText, VListItemContent, VListItemTitle, VListItemSubtitle, VList, VListGroup, VListItem, VListItemAction, VListItemAvatar, VListItemIcon, VListItemGroup, VMenu, VMessages, VNavigationDrawer, VOverflowBtn, VOverlay, VPagination, VSheet, VParallax, VPicker, VProgressCircular, VProgressLinear, VRadioGroup, VRadio, VRangeSlider, VRating, VResponsive, VSelect, VSkeletonLoader, VSlider, VSlideGroup, VSlideItem, VSnackbar, VSparkline, VSpeedDial, VSubheader, VSwitch, VSystemBar, VTabs, VTab, VTabItem, VTabsItems, VTabsSlider, VTextarea, VTextField, VThemeProvider, VTimeline, VTimelineItem, VTimePicker, VTimePickerClock, VTimePickerTitle, VToolbar, VToolbarItems, VToolbarTitle, VTooltip, VTreeview, VTreeviewNode, VVirtualScroll, VWindow, VWindowItem, VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VDialogTopTransition, VFadeTransition, VScaleTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition, VExpandTransition, VExpandXTransition */
+/*! exports provided: ClickOutside, Intersect, Mutate, Resize, Ripple, Scroll, Touch, colors, default, VApp, VAppBar, VAppBarNavIcon, VAppBarTitle, VAlert, VAutocomplete, VAvatar, VBadge, VBanner, VBottomNavigation, VBottomSheet, VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, VBtn, VBtnToggle, VCalendar, VCalendarCategory, VCalendarDaily, VCalendarWeekly, VCalendarMonthly, VCard, VCardActions, VCardSubtitle, VCardText, VCardTitle, VCarousel, VCarouselItem, VCheckbox, VSimpleCheckbox, VChip, VChipGroup, VColorPicker, VColorPickerSwatches, VColorPickerCanvas, VContent, VCombobox, VCounter, VData, VDataIterator, VDataFooter, VDataTable, VEditDialog, VTableOverflow, VDataTableHeader, VSimpleTable, VVirtualTable, VDatePicker, VDatePickerTitle, VDatePickerHeader, VDatePickerDateTable, VDatePickerMonthTable, VDatePickerYears, VDialog, VDivider, VExpansionPanels, VExpansionPanel, VExpansionPanelHeader, VExpansionPanelContent, VFileInput, VFooter, VForm, VContainer, VCol, VRow, VSpacer, VLayout, VFlex, VHover, VIcon, VImg, VInput, VItem, VItemGroup, VLabel, VLazy, VListItemActionText, VListItemContent, VListItemTitle, VListItemSubtitle, VList, VListGroup, VListItem, VListItemAction, VListItemAvatar, VListItemIcon, VListItemGroup, VMain, VMenu, VMessages, VNavigationDrawer, VOverflowBtn, VOverlay, VPagination, VSheet, VParallax, VPicker, VProgressCircular, VProgressLinear, VRadioGroup, VRadio, VRangeSlider, VRating, VResponsive, VSelect, VSkeletonLoader, VSlider, VSlideGroup, VSlideItem, VSnackbar, VSparkline, VSpeedDial, VStepper, VStepperContent, VStepperStep, VStepperHeader, VStepperItems, VSubheader, VSwitch, VSystemBar, VTabs, VTab, VTabItem, VTabsItems, VTabsSlider, VTextarea, VTextField, VThemeProvider, VTimeline, VTimelineItem, VTimePicker, VTimePickerClock, VTimePickerTitle, VToolbar, VToolbarItems, VToolbarTitle, VTooltip, VTreeview, VTreeviewNode, VVirtualScroll, VWindow, VWindowItem, VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VDialogTopTransition, VFadeTransition, VScaleTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition, VExpandTransition, VExpandXTransition */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49412,38 +49260,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VAppBarNavIcon", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VAppBarNavIcon"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VAppBarTitle", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VAppBarTitle"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBtn", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VBtn"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDivider", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VDivider"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VContainer", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VContainer"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCol", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VCol"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VRow", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VRow"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSpacer", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VSpacer"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VLayout", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VLayout"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VFlex", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VFlex"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VIcon", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VIcon"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VLazy", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VLazy"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VMain", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VMain"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepper", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VStepper"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperContent", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VStepperContent"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperStep", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VStepperStep"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperHeader", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VStepperHeader"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperItems", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VStepperItems"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VAlert", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VAlert"]; });
 
@@ -49464,6 +49280,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBreadcrumbsItem", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VBreadcrumbsItem"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBreadcrumbsDivider", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VBreadcrumbsDivider"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBtn", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VBtn"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBtnToggle", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VBtnToggle"]; });
 
@@ -49543,6 +49361,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDialog", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VDialog"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDivider", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VDivider"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VExpansionPanels", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VExpansionPanels"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VExpansionPanel", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VExpansionPanel"]; });
@@ -49557,7 +49377,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VForm", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VForm"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VContainer", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VContainer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCol", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VCol"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VRow", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VRow"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSpacer", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VSpacer"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VLayout", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VLayout"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VFlex", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VFlex"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VHover", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VHover"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VIcon", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VIcon"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VImg", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VImg"]; });
 
@@ -49568,6 +49402,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VItemGroup", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VItemGroup"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VLabel", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VLabel"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VLazy", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VLazy"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VListItemActionText", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VListItemActionText"]; });
 
@@ -49590,6 +49426,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VListItemIcon", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VListItemIcon"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VListItemGroup", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VListItemGroup"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VMain", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VMain"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VMenu", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VMenu"]; });
 
@@ -49638,6 +49476,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSparkline", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VSparkline"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSpeedDial", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VSpeedDial"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepper", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VStepper"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperContent", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VStepperContent"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperStep", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VStepperStep"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperHeader", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VStepperHeader"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperItems", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VStepperItems"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSubheader", function() { return _components__WEBPACK_IMPORTED_MODULE_0__["VSubheader"]; });
 
@@ -62729,167 +62577,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AvailableIngredients_vue_vue_type_template_id_7369aab8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AvailableIngredients_vue_vue_type_template_id_7369aab8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/IngredientSettings.vue":
-/*!********************************************************!*\
-  !*** ./resources/js/components/IngredientSettings.vue ***!
-  \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _IngredientSettings_vue_vue_type_template_id_404a70bf___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IngredientSettings.vue?vue&type=template&id=404a70bf& */ "./resources/js/components/IngredientSettings.vue?vue&type=template&id=404a70bf&");
-/* harmony import */ var _IngredientSettings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IngredientSettings.vue?vue&type=script&lang=js& */ "./resources/js/components/IngredientSettings.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-/* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vuetify-loader/lib/runtime/installComponents.js */ "./node_modules/vuetify-loader/lib/runtime/installComponents.js");
-/* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/index.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _IngredientSettings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _IngredientSettings_vue_vue_type_template_id_404a70bf___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _IngredientSettings_vue_vue_type_template_id_404a70bf___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* vuetify-loader */
-
-
-
-
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VListItem: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__["VListItem"],VListItemContent: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__["VListItemContent"],VListItemTitle: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__["VListItemTitle"]})
-
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/IngredientSettings.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/IngredientSettings.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/components/IngredientSettings.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IngredientSettings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vuetify-loader/lib/loader.js??ref--11-0!../../../node_modules/vue-loader/lib??vue-loader-options!./IngredientSettings.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vuetify-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IngredientSettings.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IngredientSettings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/IngredientSettings.vue?vue&type=template&id=404a70bf&":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/IngredientSettings.vue?vue&type=template&id=404a70bf& ***!
-  \***************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IngredientSettings_vue_vue_type_template_id_404a70bf___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vuetify-loader/lib/loader.js??ref--11-0!../../../node_modules/vue-loader/lib??vue-loader-options!./IngredientSettings.vue?vue&type=template&id=404a70bf& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vuetify-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/IngredientSettings.vue?vue&type=template&id=404a70bf&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IngredientSettings_vue_vue_type_template_id_404a70bf___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IngredientSettings_vue_vue_type_template_id_404a70bf___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/RecipeCustomiser.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/components/RecipeCustomiser.vue ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _RecipeCustomiser_vue_vue_type_template_id_1a833c3e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RecipeCustomiser.vue?vue&type=template&id=1a833c3e& */ "./resources/js/components/RecipeCustomiser.vue?vue&type=template&id=1a833c3e&");
-/* harmony import */ var _RecipeCustomiser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RecipeCustomiser.vue?vue&type=script&lang=js& */ "./resources/js/components/RecipeCustomiser.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-/* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vuetify-loader/lib/runtime/installComponents.js */ "./node_modules/vuetify-loader/lib/runtime/installComponents.js");
-/* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuetify/lib/components/VList */ "./node_modules/vuetify/lib/components/VList/index.js");
-/* harmony import */ var vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VTextField */ "./node_modules/vuetify/lib/components/VTextField/index.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _RecipeCustomiser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _RecipeCustomiser_vue_vue_type_template_id_1a833c3e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _RecipeCustomiser_vue_vue_type_template_id_1a833c3e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* vuetify-loader */
-
-
-
-
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_3___default()(component, {VList: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__["VList"],VListItem: vuetify_lib_components_VList__WEBPACK_IMPORTED_MODULE_4__["VListItem"],VTextField: vuetify_lib_components_VTextField__WEBPACK_IMPORTED_MODULE_5__["VTextField"]})
-
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/RecipeCustomiser.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/RecipeCustomiser.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/components/RecipeCustomiser.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeCustomiser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vuetify-loader/lib/loader.js??ref--11-0!../../../node_modules/vue-loader/lib??vue-loader-options!./RecipeCustomiser.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vuetify-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecipeCustomiser.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeCustomiser_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/RecipeCustomiser.vue?vue&type=template&id=1a833c3e&":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/components/RecipeCustomiser.vue?vue&type=template&id=1a833c3e& ***!
-  \*************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeCustomiser_vue_vue_type_template_id_1a833c3e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vuetify-loader/lib/loader.js??ref--11-0!../../../node_modules/vue-loader/lib??vue-loader-options!./RecipeCustomiser.vue?vue&type=template&id=1a833c3e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vuetify-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RecipeCustomiser.vue?vue&type=template&id=1a833c3e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeCustomiser_vue_vue_type_template_id_1a833c3e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vuetify_loader_lib_loader_js_ref_11_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeCustomiser_vue_vue_type_template_id_1a833c3e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -26,13 +26,8 @@
 <script>
 import axios from "axios";
 
-import IngredientSettings from "./IngredientSettings";
-
 // TODO clear state
 export default {
-  components: {
-    IngredientSettings,
-  },
   data() {
     return {
       recipeName: "",
