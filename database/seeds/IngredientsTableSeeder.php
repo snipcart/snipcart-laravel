@@ -45,7 +45,7 @@ class IngredientsTableSeeder extends Seeder
                 'price_per_gram' => 0.02,
             ],
             [
-                'name' => 'Flax seeds',
+                'name' => 'Flax Seeds',
                 'description' => 'Excellent source of protein, fiber, iron, and calcium',
                 'category' => 'seeds',
                 'price_per_gram' => 0.01,
@@ -62,12 +62,6 @@ class IngredientsTableSeeder extends Seeder
                 'description' => 'Slightly less boring milk',
                 'category' => 'milk products',
                 'price_per_gram' => 0.007,
-            ],
-            [
-                'name' => 'Almond Milk',
-                'description' => 'Milked from captive and tortured almonds',
-                'category' => 'milk products',
-                'price_per_gram' => 0.01,
             ],
             [
                 'name' => 'Green Milk',
@@ -95,7 +89,7 @@ class IngredientsTableSeeder extends Seeder
                 'price_per_gram' => 0.03,
             ],
             [
-                'name' => 'Mapple Sirup',
+                'name' => 'Maple Sirup',
                 'description' => null,
                 'category' => 'sweeteners',
                 'price_per_gram' => 0.03,
@@ -108,12 +102,6 @@ class IngredientsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Cinnamon',
-                'description' => null,
-                'category' => 'sweeteners',
-                'price_per_gram' => 0.02,
-            ],
-            [
-                'name' => 'Cacao',
                 'description' => null,
                 'category' => 'sweeteners',
                 'price_per_gram' => 0.02,
@@ -153,6 +141,12 @@ class IngredientsTableSeeder extends Seeder
             [
                 'name' => 'Berries',
                 'description' => 'A mix of small fruits goodness',
+                'category' => 'fruits',
+                'price_per_gram' => 0.03,
+            ],
+            [
+                'name' => 'Tomatoes',
+                'description' => 'Keeping up the debate',
                 'category' => 'fruits',
                 'price_per_gram' => 0.03,
             ]

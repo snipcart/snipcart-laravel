@@ -7,8 +7,14 @@ import vuetify from './vuetify'
 Vue.use(AsyncComputed);
 
 Vue.config.devtools = true;
-const app = new Vue({
+
+
+Vue.filter('titleize', function (value) {
+    return value.replace(/(?:^|\s|-)\S/g, x => x.toUpperCase());
+  })
+
+new Vue({
     render: (h) => h(App),
     el: '#app',
-    vuetify,
-});
+    vuetify: vuetify,
+}).$mount('#app');
