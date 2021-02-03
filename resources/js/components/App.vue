@@ -30,10 +30,10 @@
           >
         </v-row>
         <v-row>
-            <v-spacer class="my-16 py-16"></v-spacer>
+          <v-spacer class="my-16 py-16"></v-spacer>
         </v-row>
         <v-row id="test" justify="center" class="max-width">
-          <v-stepper class="elevation-0 stepper" v-model="e2" flat vertical>
+          <v-stepper class="elevation-0 stepper" v-model="e2" flat>
             <v-stepper-header>
               <v-stepper-step :complete="e2 > 1" step="1">
                 Select your ingredients
@@ -51,12 +51,16 @@
               <v-btn color="primary" @click="e2 = 2"> Continue </v-btn>
             </v-stepper-content>
             <v-stepper-content step="2">
-              <SelectedIngredients
-                :ingredients="selected"
-                @named="setRecipeName"
-                @sized="setSize"
-                @removed="remove"
-              />
+              <v-container fill-height fill-width fluid>
+                <v-row class="d-flex flex-column">
+                    <RecipeCustomizer
+                      :ingredients="selected"
+                      @named="setRecipeName"
+                      @sized="setSize"
+                      @removed="remove"
+                    />
+                </v-row>
+              </v-container>
               <v-btn color="primary" @click="e2 = 1" text>
                 Change ingredients
               </v-btn>
@@ -75,16 +79,14 @@
 import axios from "axios";
 
 import AvailableIngredients from "./AvailableIngredients";
-import RecipeCustomiser from "./RecipeCustomiser";
-import SelectedIngredients from "./SelectedIngredients";
+import RecipeCustomizer from "./RecipeCustomizer";
 
 import { mutateItem } from "../utils";
 
 export default {
   components: {
     AvailableIngredients,
-    RecipeCustomiser,
-    SelectedIngredients,
+    RecipeCustomizer,
   },
   data() {
     return {
@@ -128,7 +130,7 @@ export default {
       const host = window.location.protocol + "//" + window.location.host;
       Snipcart.api.cart.items.add({
         ...response.data,
-        // reset state
+        image: "img/Logo.svg",
         url: host + response.data.url,
       });
     },
@@ -170,7 +172,6 @@ export default {
     },
   },
 };
-// TODO fix naming bug
 </script>
 <style>
 .apps {
@@ -179,6 +180,11 @@ export default {
 
 .circle {
   border-radius: 100%;
+}
+
+.product {
+  height: auto;
+  width: 300px;
 }
 
 .stepper {
